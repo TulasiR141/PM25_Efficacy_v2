@@ -1,0 +1,41 @@
+ - Meeting with Magda, Sara, Tulasi, and Richard - 
+
+What is the problem that we are trying to solve in the grand scheme of things?
+
+How did these cells develop between day 7 and day 10.
+
+Dalia wants to know if she is going in the right or wrong direction.
+
+Morphological changes/metrics to describe the change of the blobs between day 7 and day 10.
+
+How do we compare two blobs? Color, area etc...
+
+What do we even want to measure? How would we know that we are looking at the same object after 3 days?
+
+Define what we are trying to measure. 
+    - Things that we can actually measure!!!
+
+Create a working calender for plan.
+
+Write code in scripts, import scripts into jupyter notebook.
+
+What changes can we measure and how can we measure them?
+
+Minutes of the meeting, include these in these in github, active thinking process.
+
+What did we discuss, what were the outcomes, goals for the week.
+
+Write Magda on metamost for quick responses.
+
+OUTCOMES AND RESULTS ARE IMPORTANT
+
+ - Outcomes discussion Tulasi and Richard - 
+
+ Goals for the week:
+
+ 1. Update minutes in Github -> Richard
+ 2. Proposal preperation -> Richard
+ 3. Understand the data -> Richard and Tulasi
+ 4. Find metrics individually (at least 2 metrics to be explored)
+ 5. Write e-mail to Dalia for more data, her presentation, and what specific metrics she is interested in -> Tulasi
+ 6. Calender and planning -> Tulasi
