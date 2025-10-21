@@ -1,0 +1,36 @@
+ - Minutes Tulasi & Richard - 
+
+ Build an agenda for the mettings with magda
+  - Discuss and provide an update on what we did during the previous week
+  - discuss any challenges or issus
+  - Plan for the next two weeks
+  - Schedule a time for the next meeting
+
+Metrics to measures
+
+ - CATEGORIES - 
+ - - Size and Shape (Sara)
+ - - - Circularity
+ - - - Area
+ - - - Diameter
+ - - Texture and Internal Structure (Richard)
+ - - - Intensity gradient throughout the cell
+ - - - Haralick Features
+ - - Boundary and Edge (Tulasi)
+ - - - Smoothness/Fractial Dimension
+ - - - - Measures the complexity/roughness of the boundary
+ - - - Gradient Magnitude
+
+ Collect the data from Bibin and Dalia and sort the data according to days. (Tulasi)
+
+ Each person goes over the metrics in their category and describes how to measure them and what they are/ what they measure by
+ Thursday 23 October.
+
+ Meeting for Thursday scheduled on webmail calender. 
+
+ Tulasi and Richard sat down together and looked at the different aspects of the images. Talking about the geometry,
+ the shape of the boundaries, and the way that the color changes within the cell (texture/intensity). We decided on 
+ different metrics and will explore how to measure them before the meeting next Thursday.
+
+
+
