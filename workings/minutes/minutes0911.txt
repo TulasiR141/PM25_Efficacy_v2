@@ -33,9 +33,9 @@ OUTCOMES AND RESULTS ARE IMPORTANT
 
  Goals for the week:
 
- 1. Update minutes in Github -> Richard
- 2. Proposal preperation -> Richard
+ 1. Update minutes in Github -> Richard (finished)
+ 2. Proposal preperation -> Richard 
  3. Understand the data -> Richard and Tulasi
- 4. Find metrics individually (at least 2 metrics to be explored)
- 5. Write e-mail to Dalia for more data, her presentation, and what specific metrics she is interested in -> Tulasi
- 6. Calender and planning -> Tulasi
+ 4. Find metrics individually (at least 2 metrics to be explored) (Done)
+ 5. Write e-mail to Dalia for more data, her presentation, and what specific metrics she is interested in -> Tulasi (finished)
+ 6. Calender and planning -> Tulasi (finished)
