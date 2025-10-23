@@ -1,0 +1,22 @@
+Create a roadmap in Github, how do we add the roadmap to the drug efficacy project that magda created.
+
+Minutes update throughout the semester by richard
+
+tulasi will handle the calendar updates for the time being
+
+Area and circularity tulasi will look at on roboflow, report findings to Richard so that he can incorporate them in the python scripts.
+
+Write Dalia a follow up email. (Richard)
+
+Share the GitHub roadmap with everyone. (Tulasi)
+
+Include scientific papers for sources for measuring the geometrical features of the spheriods.
+
+Create a powerpoint presentation for the metting on Tuesday. (Tulasi)
+
+Richard and Tulasi spoke on a video call over whatsapp for 42 minutes. Tulasi shared her
+screen and started a new roadmap project in Github. We discussed the immidiate next steps for today and will
+regroup on tuesday morning to discuss the presentiation for Magda. 
+
+
+
