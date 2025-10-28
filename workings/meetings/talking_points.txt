@@ -1,0 +1,5 @@
+1. What do we want to measure? We want to measure the following characteristics of both the spheroid and the ebris surrounding 
+    the spheroids from the grey-scale images:
+  - Circularity -> This will be the main geometrical measurement, as it is unitless and therefore can handle the lack of scale.
+    To calculate the circularity we will need both the area and the perimeter. c = 4*pi*A/P^2
+  - Area -> 
