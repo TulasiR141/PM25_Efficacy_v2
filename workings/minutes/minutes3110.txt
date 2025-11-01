@@ -1,0 +1,34 @@
+Use the github code that already exists for getting the area and the perimeter.
+
+Increase the datset by augmentation!
+
+use roboflow boundary as validation compare with the model drawn boundary. 
+
+Problem one is not that simple there are different algorithms
+Focus on the first part, learn to notice  the boundary and characterize the object. This would still be a good achievement.
+
+Part one is alreadyenough, just stick with part one
+
+Part one should be given adequate time
+
+Don't train inside roboflow, you don't really get the details of the results.
+
+For retraining and optimizing on Roboflow you would need to subscribe
+
+Part 1 is the foundation -> we need to achieve high accuracy of the segmentation. For this part we don't care what drug it is or what day the image was taken.
+
+We will have to split the train, test and validation data from Roboflow ourselves. 
+
+We get and got access to the RoboFlow dataset through our email.
+
+Echo is the name of the microscope can we develop a model to handle the segmentation from each microscope
+
+Stick to one of the datasets from one of the microscopes and then cross validate on the other data set.
+
+Schedule a meeting for every Friday at 11 a.m. with Dalia
+
+We can do the augmentation on Roboflow
+
+Some images are not annotated, Dalia can go through and add more images before next week.
+
+If we do find a model first, we can just go ahead with it.
