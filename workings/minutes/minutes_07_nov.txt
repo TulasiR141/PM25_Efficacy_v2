@@ -1,0 +1,7 @@
+The repeated tag in the file names can mean that the sample was used for two different experiments, but it was placed in the same well.
+
+Dalia said that we might be able to use Roboflow in order to get the formatting of the annotations that we need for the UNET pipeline.
+  - After extensive looking on Roboflow, this is not the case and the files need to transformed into UNET formnat from the YOLO format that you can download from Roboflow.
+
+For the project statement Dalia mentioned that we should make a cut at the last part of the sentence and then say that should only mention that we would compare before and after treatment
+  - Dalia would be able to provide an outline of the directory setup which details which images were taken before the drugs were applied and after the drugs were applied.
