@@ -1,0 +1,98 @@
+Minutes 10.11.2025
+
+Add Dalia as a key stakeholder in the first slide, also add my last name to the first slide.
+
+Change time points to be before and after treatment, not from different time points, this was mentioned by Dalia.
+
+The objective is not very clear on what we are comparing. So we need to change the writing for the objective. To make it more clear.
+
+d7 and d10 in parenthesis, should be before and after drug treat. We need to just be clear that we are doing the segmentation independent of what day it is. 
+
+Feature extraction first figure what morphological to say that we want to identify reasonable geometrical metrics. 
+
+Clarify with Dalia when the drug, we should know exactly when the drugs are being applied. 
+
+Do not worry about the times for the project roadmap slide like have the dates above each phase
+
+She doesn't see the steps where we are exploring what we did to decide which models or metrics to use. 
+
+Create methodology details is too detailed, we don't need to include that in the paper or presentation.
+
+These things are good, but they are not carved instone for the roadmap slide she amde that comment. 
+
+The tasks are finished when there is an outcome, each task is finished when the deliverable is complete. Create a deliverable for research and
+learnings.
+
+We can say that we cannot except data any later than a certain date. 
+
+We need more documentation on what the sources tools and technology should be, we need the justification on this slide. So we can have in there that we looked at different papers and say what paper we got our information and justify why we are choosing certain metrics. Justify, why are we choosing certain models and metrics, state and make sure that the reason is clear. 
+
+Change the meetings to mondays at 3 p.m. for the meetings with Magda.
+
+Do not use UI, it is a waste of time. 
+
+For the augmentations, be careful, first do the exploration so that we can justify what augmentations to do. 
+
+
+Be careful people underestimate and the split the test set. So that we don't get something unexpected. All the possible things that could have an impact are equally represented in the training and the test set. 
+
+Normalizing the image data can be more difficult than you think. Explain on how we decide to do that, and maybe there is no needd for notmalization and we should be convinced that we are doing is correct. Make sure that we how the data should be looking is very critical spend alot of time thinking about what we espect from these preprocessing steps and why, also we need to answer that what we want to do in pre processing MAKES SENSE!!!! THIS IS VERY IMPORTANT
+
+there are poster templates in latex
+
+
+why what how and when.
+
+Only go through the project plan again when there is some change or new topic that we need to discuss or when we need to reorganize.
+
+In the PD slideshow, we should also have the times. Like include when each task will be done in the project development slides. Dates.
+
+Minutes 10.11.2025
+
+Add Dalia as a key stakeholder in the first slide, also add my last name to the first slide.
+
+Change time points to be before and after treatment, not from different time points, this was mentioned by Dalia.
+
+The objective is not very clear on what we are comparing. So we need to change the writing for the objective. To make it more clear.
+
+d7 and d10 in parenthesis, should be before and after drug treat. We need to just be clear that we are doing the segmentation independent of what day it is. 
+
+Feature extraction first figure what morphological to say that we want to identify reasonable geometrical metrics. 
+
+Clarify with Dalia when the drug, we should know exactly when the drugs are being applied. 
+
+Do not worry about the times for the project roadmap slide like have the dates above each phase
+
+She doesn't see the steps where we are exploring what we did to decide which models or metrics to use. 
+
+Create methodology details is too detailed, we don't need to include that in the paper or presentation.
+
+These things are good, but they are not carved instone for the roadmap slide she amde that comment. 
+
+The tasks are finished when there is an outcome, each task is finished when the deliverable is complete. Create a deliverable for research and
+learnings.
+
+We can say that we cannot except data any later than a certain date. 
+
+We need more documentation on what the sources tools and technology should be, we need the justification on this slide. So we can have in there that we looked at different papers and say what paper we got our information and justify why we are choosing certain metrics. Justify, why are we choosing certain models and metrics, state and make sure that the reason is clear. 
+
+Change the meetings to mondays at 3 p.m. for the meetings with Magda.
+
+Do not use UI, it is a waste of time. 
+
+For the augmentations, be careful, first do the exploration so that we can justify what augmentations to do. 
+
+
+Be careful people underestimate and the split the test set. So that we don't get something unexpected. All the possible things that could have an impact are equally represented in the training and the test set. 
+
+Normalizing the image data can be more difficult than you think. Explain on how we decide to do that, and maybe there is no needd for notmalization and we should be convinced that we are doing is correct. Make sure that we how the data should be looking is very critical spend alot of time thinking about what we espect from these preprocessing steps and why, also we need to answer that what we want to do in pre processing MAKES SENSE!!!! THIS IS VERY IMPORTANT
+
+there are poster templates in latex
+
+
+why what how and when.
+
+Only go through the project plan again when there is some change or new topic that we need to discuss or when we need to reorganize.
+
+In the PD slideshow, we should also have the times. Like include when each task will be done in the project development slides. Dates.
+
