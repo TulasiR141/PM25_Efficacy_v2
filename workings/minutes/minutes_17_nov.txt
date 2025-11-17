@@ -1,0 +1,32 @@
+Minutes 17.11.2025
+
+send a copy of the poster on Wednesday to Magda, she can look at it on Thursday. 
+
+More sophisticated monitoring procedure, make the images smaller, 512 by 512 is a stretch, preferable 256 x 256.
+
+Increase batch size and increase the model size, try for 16 or 32 batch. Batch size would play a bigger role than the model size.
+
+There is a server we can access with GPUs, 
+
+We should know what the metrics and figure out if the metrics sense for the project that we have.
+
+Are the metrics relevant for the next steps that are we going to make by calculating the geometrical properties.
+
+Metrics that are relavant for confirming how well we can find the contours of the spheroids. 
+Whatever we are doing in this step should also make sense as a value for the next step that we are going to take. 
+
+What does Dalia do to make sure that her model is doing well? How does Dalia calculate her accuracy score? What is her baseline? What metrics does she use and how can we outperform those metrics that she calculated from her model.
+
+The most important is that we are supposed to be useful, so we need to do better than her approach that she is already using. How and what does she measure.
+
+The poster sesssion is not like an exam it is more like a discussion. We should be able to explain what we are doing. What is the problem, what are the challenges from the problem , and how will we go about solving it. What have you done already and what remains to be done.
+
+this is research is really being presented. It is like a mockup session to prepare us for presenting research later on. Mostly done for reasearch that is still being developed. So we can get ideas from the others in how to communicate on different approachs for moving forward with the project.
+
+The content of the poster is very individual.
+
+WE have to decide what we think will be most useful for the viewer.
+
+If we don't have something in the poster, then we may not remember to talk about it. 
+
+Project, objectives and challenges, why is it complicated?
