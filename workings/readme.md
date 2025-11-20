@@ -1,7 +1,13 @@
 # MAI Project Module
 
-#### Project title:
+#### Project title:Spheroid Metrics
+
 #### Team members:
+
+Tulasi Rajgopal
+Richard Van Winkle
+Sara Prasla
+
 
 ## Description
 Description of the project and explanation of the folder structure.
