@@ -1,0 +1,40 @@
+Data status: Received data for controlled and treated, but no annotations. Email has been sent to Dalia. 
+
+We will use Data for comparison as we dont have data annotated. 
+The data is also not grayscale. 
+
+You need to figure out how to validate the model. 
+
+We can use unsupervised learning for  non-annotated data. We have clustering and self-supervised and we can come up with 'Fake Labels'.
+The reason we do it is not because we will get fake feautres/ labels but because when we train it, we can train all in the neural network further on and features extracted of neural network can be pretty good. 
+It can learn some underlining/latent features. 
+
+Neural network can be a reasonable method.
+
+We should be clear on how to measure a circularity of the spheroid. We need to be more precise with morphological changes; perimeter and circulairty. 
+
+We need to figure out how to normalise images in terms of lighter or darker images.
+
+Establish histogram to see color contrast and normalisation of how the color changed. 
+
+We are exploring texture intensity GLCM. The reason why need to know it that we can understand the images and what perimeter 
+
+Example
+The shape is almost same, but the color has changed. The drug did not change the boundary. 
+
+One is segmentation, calculate metrics. Then compare bw controlled and treated. Do we have untreated? No
+
+We can not make decisions. To measure changes we need to have untreated data because logically we can not tell if the dataset is making change or no. 
+
+We can not speculate dying or living cells unless we have it backed up by strong data.
+
+We have to ask for untreated data if we want to check if the cell is being treated or not. 
+
+We need to spend more time on thinking which methods are useful for our specific project. 
+
+Think about that the model should benefit where both type of images 
+
+First start to segment the controlled and apply the model to the controlled. And the other type of treated can be used as a comparison.
+
+Smoothening is not a great approach according to the professor. 
+
