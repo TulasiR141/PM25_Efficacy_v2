@@ -1,0 +1,189 @@
+The environment setup should take 30 minutes to an hour, depending on what versions of the packages you need for your GPU. So this will be different for every computer and will be a one time task per computer, considering that we use the same environment throughout the project. 
+
+I’ve included a standard GPU test script that I had lying around. 
+
+Other issues that we might want to avoid is, we should never cache the entire dataset into memory, this will also cause the computer to “crash” gracefully, basically the terminal will terminate the running of the code. Just be aware when you are going through the code that we are not throwing too much into memory. 
+
+
+#CUDA TEST SCRIPT
+import torch
+
+print("CUDA available:", torch.cuda.is_available())
+if torch.cuda.is_available():
+    print("GPU name:", torch.cuda.get_device_name(0))
+#END OF CUDA TEST SCRIPT
+
+
+Run this on python, depending on the version of your GPU, you might need an older version of pytorch which is only compatible with python 3.10. In that case you need to create a condor environment and install python 3.1 on it, then from there you might have to fiddle around with the pytorch version and cuda until you get the above code to work without errors. 
+
+
+
+DUAL MODEL SETUP
+
+The preprocessing steps mentioned Tulasi’s task are included in the UNET training pipeline code
+Figure out if those are also relevant for the yolov8 code?
+We need to break down this code into functionality segments.
+What part of the code is performing what task.
+Translate each functionality segment of the code to the yolov8 script
+We will need a very good idea of what pre-processing, if any, that we are going to do to the images. For a start we can use what the UNET has provided, but we should also verify that the transformations are not making the image data non-usable, for example the annotation no longer matches up with their previous locations on the raw images. 
+Note the different formatting of the files for yolov8 and UNET. The images are stored in different formats. For instance, the yolov8 images are stored in train, test, and val directories underneath a parent directory. The formatting for UNET is different.
+I would say here once we have the UNET and yolov8 codes set up we should do some initial pushes of the image data through the code and see what bugs are there. That will give us the most information as to whether the code will work or not, and allow us to fix it on the fly.
+This is assuming that the architecture for the UNET is already well built. 
+Like first we get the code running just to see where we are. Like we will probably get precision and recall results and we should be able to overlay the predictions on top of the ground truth and eyeball how close they are. 
+also, then we will have an idea of how much computing power we will need and how long it will take to train the code.
+Then when we get the results, we can identify weaknesses and iterate, based on new findings and ideas, also hopefully we would have an idea of what metrics we can cover by then, and decide on what verification metrics to add into the code. Also we we need to take the predictions and run them through some area and perimeter code that calculates those values and from that the circularity. So we can add that after we get some initial predictions. 
+
+these are my first thoughts for the pipeline, they are super rough. 
+
+Who can do what?
+
+ Tulasi: I would like your ideas on what we should do to the images before we bring them into the model. Again, there are suggestions in the UNET code. 
+
+Could you take out the preprocessing parts from the UNEt code and push the images through the pre-processing and see that the data remains viable?
+
+Sara: As soon as you get to it I would need to know the verification metrics you would like to have evaluated after the model has trained, recall precision, f1-score, etc…
+
+Richard:
+
+I can already get this code setup, I already have a GPU environment built on my machine. By the end of the weekend, I should know some key values like training time, processing power required, etc.. I mean I’ll be able to find out more about it once I see where the bugs and issues are. The first results will be inconclusive
+
+
+07.11.2025
+
+Take the yolo format of the images and annotations and convert the yolo annotation (polygons stored in a .txt file) in masks required for UNET, those will be png files.
+code = convert_yolo_to_unet.py
+deliverable = 4 separate directories for the yolo (2) and UNET (2) formatted images.
+Now we need to verify that the masks are in the same place as the annotations.
+Then we need to go through the images and sort them into the correct directory setup for being fed into the unet pipeline. See prepare_data.py
+In this step we are also going to append _t to the the end of the images and corresponding labels that we want to use for testing and validation, there is no distinguishing between the two for the UNET pipeline
+here we need to go through and verify which of the layers in the unet mask images are actually the inner boundary of the spheroid or the spheroids smaller boundary, so that when we eventually create the binary mask that we don’t accidentally take the spheroid outer boundary with it. See code: check_unet_masks.py also to verify the layer you can do that visually with this code here: visually_confirm_unet_mask.py
+Then we need to go through and make sure that there is only one single binary mask for the label images, it should be layer 2 after visual confirmation. you can do this with the code conert_masks_to_binary.py
+Then you will want to compare the binary images to the polygons drawn over the yolo images, so you can make sure that you took the correct class and that the mask is only over the spheroid and doesn’t include any debris. That can be accomplished in the code: compare_yolo_and_unet_masks.py
+
+
+10.11.2025
+
+1. Convert YOLO annotations (polygons in .txt files) into UNET-compatible PNG masks using convert_yolo_to_unet.py.
+ → Create 4 directories: yolo/images, yolo/labels, unet/images, and unet/masks.
+
+
+2. Verify that every YOLO annotation has a corresponding UNET mask and matching filename.
+
+
+3. Organize images and masks into the proper directory setup for the UNET pipeline using prepare_data.py.
+ → Append _t to filenames selected for testing and validation (no distinction between the two in the UNET setup).
+
+
+4. Check which layer in the UNET masks corresponds to the inner spheroid boundary using check_unet_masks.py, and confirm visually with visually_confirm_unet_mask.py.
+
+
+5. Ensure only one binary mask layer remains (layer 2 after confirmation) by running convert_masks_to_binary.py.
+
+
+6. Compare binary masks with YOLO polygons using compare_yolo_and_unet_masks.py to confirm correct class selection and ensure masks cover only the spheroid, excluding debris.
+
+Next steps: 
+
+The images that we transferred to unet annotations was only the data from roboflow. There is also the data the Dalia emailed us, that needs to be transferred to UNET formatting. The thing here is that the data from the email only has two classes whereas the data from Roboflow has three classes. So we still need to transfer the data with two classes over to UNET formatting. (3 hours)
+Set up the packages inside the virtual environment so that we can run the unet pipeline. Preprocessing is already built into UNET 
+
+12.11.2025
+
+Today I am going to consolidate all of the yolo data into one directory and only keep the spheroid and background class. I am also going to put everything in the train folder at first (done), so that we can run some preprocessing checks on it (done) and also see that when we separate all of the data there is no characteristic that is getting bunched into either only the training set or only the test set.
+
+Preprocessing Steps
+
+Pixel Normalization (online = during training): the mean brightness and standard deviation were averaged for every image across all three channels of the data set and got the following results:
+mean = [0.531, 0.531, 0.531] std = [0.207, 0.207, 0.207]
+These values differ greatly compared to the standard imageNET values, so we will use those mean and std values calculated for our image dataset
+The images from the two datasets vary in the brightness of the backgrounds, see the images below
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Resizing (offline = before training): Some images are 2327x2190 and others are 1485x2048
+Because of the boundaries relationship to the image size we can’t just squish the image without losing the true boundary to the spheroid, we have to preserve the ratio.
+resize to 1024 x 1024 and add padding to preserve the aspect-ratio
+
+14.11.2025
+
+Do a gaussian blur during training( = online)
+the data loader should add blur randomly after each epoch
+This will allow the model to be able to handle slight blurs in images from later processing when the model is actually in use.
+Data flips and rotations to increase dataset size
+Be careful here! We don’t want the model to learn how to view different orientations of the same spheroid, we want it to learn the features that define the boundary
+Too many flips of each image may lead the model to over-learning orientation invariance
+Solution per image (offline = saved images before training):
+horizontal flip
+probability = 35%
+vertical flip
+probability = 35%
+rotation 90 deg
+probability = 18%
+rotation 270 deg
+probability = 18%
+Those are conservative values, that still add images and allows the model to take into account how the orientation of the spheroid might affect the boundary of the spheroid. Otherwise, too much flipping will teach the model that the orientation does not matter.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Splitting the dataset into train/test/val
+
+keep all of the augmented/flipped images together
+have different augmentations of the same image split into training and testing will cause data leakage
+we want the test set to contain completely unseen spheroids.
+Some of the images are bright and some are darker
+we must split up lighter and darker images well between training and testing
+not that we train on only the lighter images and test on the darker ones, for example
+Avoid having all the spheroids of a similar size and shape in one batch (train/test or val)
+
+NOTE: We need to rewrite the UNET pipeline to include testing and validation data, before it was setup to only have train and test data, but we are going to do all three
+The model uses the validation data during training to update the hyperparameters and tune the model
+it will be biased if we use it for testing also
+The test data will be independent and the model will have never seen it before.
+
+18.11.2025
+These are the parameters for running images at size 512 on the Cairo machines:
+512 x 512 images size, batch size 32 with medium yolov8 segmentation model
+
+256 x 256:
+Batch size = 64 and yolov8 large segmentation model
+
+1024 x 1024:
+batch size = 16 and yolov8 nano segmentation model
+
+Include something like a boundary f1 loss so that we can see how accurate we are along the boundaries.
+
+20.11.2025
+
+We can potentially use the following boundary metrics:
+
+
+
+boundary iou
+hausdorff distance HD / 95th percentile HD
+Average symmetric smoothing distance
+
+Dropping images lower than 512 x 512 may blur the edges too much for accurate measurements.
+
