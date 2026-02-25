@@ -16,6 +16,7 @@ This README describes the current code pipeline from data setup to model trainin
 3. Confirm output split dataset exists (with `data.yaml`) for training.
 
 ### B) Train YOLO segmentation model
+=======
 
 4. Train with:
    - `python code/models/yolo_train.py`
@@ -128,3 +129,18 @@ pip install ultralytics torch torchvision albumentations opencv-python numpy mat
 - Run from repo root: `/home/riki/PM25_Efficacy`.
 - Many scripts are still path-configured internally; edit their config blocks before running.
 - For the final drug-treatment comparison stage, keep filename pairing between Control and Treated folders exact.
+
+
+#### Project title:Spheroid Metrics
+
+#### Team members:
+
+Tulasi Rajgopal
+Richard Van Winkle
+Sara Prasla
+
+
+## Description
+Since this project involves experimenting with multiple pipelines, each following its own structure, dependencies, and processing steps, we have provided a dedicated README file within each pipeline’s folder. These README files contain detailed installation instructions, environment setup steps, and usage guidelines tailored specifically to that pipeline.
+
+
