@@ -72,6 +72,14 @@ Pipeline stages:
 - **Key Stakeholder**: Dr. Dalia Mahdy
 - **Institution**: THWS
 
+## Acknowledgements
+The authors would like to express their sincere gratitude to Prof. Dr. Magda Gregorová for her continuous support, valuable guidance, and constructive feedback throughout the course of this project. Her expertise and mentorship were instrumental in shaping the direction and quality of this work.
+
+We also extend our sincere thanks to Dr. Dalia Mahdy for providing all the data necessary for this project, as well as for her insights and support, which significantly contributed to the practical relevance and successful completion of this work.
+
+Additionally, we acknowledge the use of AI-assisted tools such as ChatGPT, Claude, and Perplexity, which supported efficient research, knowledge acquisition, and assistance during the writing process. These tools were used as supplementary aids and did not replace the authors’ own analysis, interpretation, or critical thinking.
+
+
 ### Where to find more?
 GitHub Repository: https://github.com/thws-mai/PM25_Efficacy
 
