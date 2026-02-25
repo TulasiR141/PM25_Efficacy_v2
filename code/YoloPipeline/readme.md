@@ -7,19 +7,18 @@ This README describes the current code pipeline from data setup to model trainin
 ### A) Prepare YOLO training data
 
 1. Put your source YOLO data in split format (images + labels).
-2. Consolidate/clean/augment/split using the `code/src` pipeline:
-   - `python code/src/consolidate_echo_v3.py`
-   - `python code/src/check_image_labels_consistency.py`
-   - `python code/src/clean_unmatched_labels.py`
-   - `python code/src/augment_echo_v3.py`
-   - `python code/src/split_and_fix_yolo.py`
+2. Consolidate/clean/augment/split using the `code/YoloPipeline/DataPrepareYolo/` pipeline:
+   - `python code/YoloPipeline/DataPrepareYolo/consolidate_echo_v3.py`
+   - `python code/YoloPipeline/DataPrepareYolo/check_image_labels_consistency.py`
+   - `python code/YoloPipeline/DataPrepareYolo/clean_unmatched_labels.py`
+   - `python code/YoloPipeline/DataPrepareYolo/augment_echo_v3.py`
+   - `python code/YoloPipeline/DataPrepareYolo/split_and_fix_yolo.py`
 3. Confirm output split dataset exists (with `data.yaml`) for training.
 
 ### B) Train YOLO segmentation model
-=======
 
 4. Train with:
-   - `python code/models/yolo_train.py`
+   - `python code/YoloPipeline/Model_train_Evaluation/yolo_train.py`
 5. Training output:
    - `yolo_training_output/<run_name>/weights/best.pt`
 
@@ -53,7 +52,7 @@ Most scripts use hard-coded `CONFIG` paths. Update each script before running.
 For most scripts:
 - `class x1 y1 x2 y2 ...` (normalized polygon coordinates)
 
-Some `code/src` scripts can parse extended variants, but keep one consistent format per dataset.
+Some `code/YoloPipeline/DataPrepareYolo/` scripts can parse extended variants, but keep one consistent format per dataset.
 
 ### Expected paired comparison structure
 
@@ -101,22 +100,22 @@ pip install ultralytics torch torchvision albumentations opencv-python numpy mat
 - `code/data_processing/visualize_yolo_segmentation.py`: Random sample visualization of YOLO segmentation labels.
 - `code/data_processing/visually_confirm_unet_masks.py`: Manual visualization check for selected U-Net mask/image pairs.
 
-### `code/src/`
+### `code/YoloPipeline/DataPrepareYolo/`
 
-- `code/src/augment_echo_v3.py`: Augments consolidated YOLO data while preserving polygon labels.
-- `code/src/bring_augmented_base_images.py`: Ensures base/original images are present in augmented dataset output.
-- `code/src/check_image_labels_consistency.py`: Verifies image-label filename consistency.
-- `code/src/clean_unmatched_labels.py`: Removes labels with no matching images.
-- `code/src/consolidate_echo_v3.py`: Consolidates split data into one pool.
-- `code/src/eval_yolo_seg_metrics.py`: Alternate YOLO segmentation evaluation script with overlay/report outputs.
-- `code/src/split_and_fix_yolo.py`: Group-aware split generation and class-id fixing.
-- `code/src/visualize_polygons.py`: Polygon spot-check visualization tool.
-- `code/src/yolo_to_unet.py`: Converts YOLO splits into U-Net image-mask splits.
+- `code/YoloPipeline/DataPrepareYolo/augment_echo_v3.py`: Augments consolidated YOLO data while preserving polygon labels.
+- `code/YoloPipeline/DataPrepareYolo/bring_augmented_base_images.py`: Ensures base/original images are present in augmented dataset output.
+- `code/YoloPipeline/DataPrepareYolo/check_image_labels_consistency.py`: Verifies image-label filename consistency.
+- `code/YoloPipeline/DataPrepareYolo/clean_unmatched_labels.py`: Removes labels with no matching images.
+- `code/YoloPipeline/DataPrepareYolo/consolidate_echo_v3.py`: Consolidates split data into one pool.
+- `code/YoloPipeline/DataPrepareYolo/eval_yolo_seg_metrics.py`: Alternate YOLO segmentation evaluation script with overlay/report outputs.
+- `code/YoloPipeline/DataPrepareYolo/split_and_fix_yolo.py`: Group-aware split generation and class-id fixing.
+- `code/YoloPipeline/DataPrepareYolo/visualize_polygons.py`: Polygon spot-check visualization tool.
+- `code/YoloPipeline/DataPrepareYolo/yolo_to_unet.py`: Converts YOLO splits into U-Net image-mask splits.
 
-### `code/models/`
+### `code/YoloPipeline/Model_train_Evaluation/`
 
-- `code/models/eval_yolo.py`: Evaluates trained YOLO predictions against YOLO-label-derived masks with boundary-focused metrics.
-- `code/models/yolo_train.py`: Main YOLOv8 segmentation training script currently used in this repository.
+- `code/YoloPipeline/Model_train_Evaluation/eval_yolo.py`: Evaluates trained YOLO predictions against YOLO-label-derived masks with boundary-focused metrics.
+- `code/YoloPipeline/Model_train_Evaluation/yolo_train.py`: Main YOLOv8 segmentation training script currently used in this repository.
 
 ### `code/metric_tools/`
 
@@ -141,6 +140,4 @@ Sara Prasla
 
 
 ## Description
-Since this project involves experimenting with multiple pipelines, each following its own structure, dependencies, and processing steps, we have provided a dedicated README file within each pipeline’s folder. These README files contain detailed installation instructions, environment setup steps, and usage guidelines tailored specifically to that pipeline.
-
-
+Since this project involves experimenting with multiple pipelines, each following its own structure, dependencies, and processing steps, we have provided a dedicated README file within each pipeline's folder. These README files contain detailed installation instructions, environment setup steps, and usage guidelines tailored specifically to that pipeline.
